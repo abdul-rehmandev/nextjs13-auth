@@ -16,7 +16,7 @@ const page = () => {
     const handleSignup = async () => {
         toast.loading("Processing", { id: "1" })
         if (!username || !email || !password) {
-            return console.log("All fields required!")
+            return toast.error("All fields required", { id: "1" })
         } else {
             await axios.post("/api/users/signup", {
                 username,
