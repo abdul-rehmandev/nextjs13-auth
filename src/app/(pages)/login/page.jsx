@@ -14,6 +14,7 @@ const page = () => {
     const [password, setPassword] = useState("")
 
     const handleLogin = async () => {
+        toast.loading("Processing", { id: "1" })
         if (!email || !password) {
             return toast.error("All fields required", { id: "1" })
         } else {
